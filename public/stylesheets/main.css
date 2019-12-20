@@ -1,0 +1,24 @@
+.thumbnail img {
+    height: 100%;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.thumbnail {
+    height: 60%;
+    padding: 5px 5px;
+}
+
+.thumbnail.caption-full {
+    padding: 9px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
