@@ -12,6 +12,7 @@ var express             = require("express"),
     flash               = require("connect-flash"),
     User                = require("./models/user"),
     methodOverride      = require("method-override");
+    
 const sessions          = require("client-sessions");
 
 //obtain routes
