@@ -56,6 +56,8 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
 * [client-sessions](https://github.com/mozilla/node-client-sessions)
 * [google-maps](https://developers.google.com/maps/documentation/javascript/tutorial)
 * [momentJS](https://github.com/moment/moment)
+* [nodemailer](https://github.com/nodemailer/nodemailer)
+* [async](https://github.com/caolan/async)
 
 ### Platforms
 
