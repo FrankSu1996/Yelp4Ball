@@ -28,7 +28,6 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.DATABASEURL);
-//mongoose.connect('mongodb+srv://Frank:FrankSu1996@cluster0-vwm1c.mongodb.net/test?retryWrites=true&w=majority');
 
 //setup app configurations and middlewares
 app.use(methodOverride("_method"));
