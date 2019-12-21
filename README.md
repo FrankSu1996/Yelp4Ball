@@ -55,6 +55,7 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
 * [bcrypejs](https://github.com/dcodeIO/bcrypt.js#readme)
 * [client-sessions](https://github.com/mozilla/node-client-sessions)
 * [google-maps](https://developers.google.com/maps/documentation/javascript/tutorial)
+* [momentJS](https://github.com/moment/moment)
 
 ### Platforms
 
