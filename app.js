@@ -30,6 +30,7 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.DATABASEURL);
 
 //setup app configurations and middlewares
+app.locals.moment = require("moment");
 app.use(methodOverride("_method"));
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));

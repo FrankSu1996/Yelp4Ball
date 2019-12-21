@@ -18,7 +18,7 @@
                     <h4><a><%=ballcourt.name%></a></h4>
                     <p><strong><%= ballcourt.description%></strong></p>
                     <p>
-                        <em>Submitted By: <%= ballcourt.author.userName%></em>
+                        <em>Submitted By: <%= ballcourt.author.userName%>, <%= moment(ballcourt.createdAt).fromNow() %></em>
                     </p>
                     <p>
                         <em>Location: <%= ballcourt.location%></em>
@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <strong><%= comment.author.userName %></strong>
-                            <span class="pull-right"><%= comment.date.toDateString() %></span>
+                            <span class="pull-right"><%= moment(comment.date).fromNow() %></span>
                             <p>
                                 <%= comment.text %>
                             </p>
