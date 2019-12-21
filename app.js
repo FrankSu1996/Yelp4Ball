@@ -27,8 +27,8 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-//mongoose.connect('mongodb://localhost:27017/yelp_camp_v5');
-mongoose.connect('mongodb+srv://Frank:FrankSu1996@cluster0-vwm1c.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect(process.env.DATABASEURL);
+//mongoose.connect('mongodb+srv://Frank:FrankSu1996@cluster0-vwm1c.mongodb.net/test?retryWrites=true&w=majority');
 
 //setup app configurations and middlewares
 app.use(methodOverride("_method"));
@@ -73,6 +73,6 @@ app.use("/", indexRoutes);
 app.use("/ballcourts/:id/comments", commentRoutes);
 app.use("/ballcourts", ballcourtRoutes);
 
-app.listen((process.env.PORT || 5000), function() {
+app.listen((process.env.PORT || 3000), function() {
     console.log("The YelpCamp Server Has Started!");
 });
