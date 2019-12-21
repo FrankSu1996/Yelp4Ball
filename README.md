@@ -11,7 +11,7 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
 
 * Authentication:
   
-  * User registration/login with username and password
+  * User registration/login with username and password. Click on Login/Signup on navigation bar.
 
 
 * Authorization:
@@ -19,6 +19,11 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
   * One cannot manage posts and view user profile without being authenticated
 
   * One cannot edit or delete posts and comments created by other users
+  
+* Password reset:
+  * User can request to reset password. When signed in, click on "Reset Password" on navigation bar.
+  
+  * User will receive email with reset link
 
 
 * Manage ball court posts with basic functionalities:
@@ -52,12 +57,14 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
 * [method-override](https://github.com/expressjs/method-override#method-override)
 * [geocoder](https://github.com/wyattdanger/geocoder#geocoder)
 * [connect-flash](https://github.com/jaredhanson/connect-flash#connect-flash)
-* [bcrypejs](https://github.com/dcodeIO/bcrypt.js#readme)
+* [bcryptjs](https://github.com/dcodeIO/bcrypt.js#readme)
 * [client-sessions](https://github.com/mozilla/node-client-sessions)
 * [google-maps](https://developers.google.com/maps/documentation/javascript/tutorial)
 * [momentJS](https://github.com/moment/moment)
 * [nodemailer](https://github.com/nodemailer/nodemailer)
 * [async](https://github.com/caolan/async)
+* [multer](https://github.com/expressjs/multer)
+* [cloudinary](https://cloudinary.com/)
 
 ### Platforms
 
