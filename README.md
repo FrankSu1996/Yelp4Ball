@@ -11,7 +11,8 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
 
 * Authentication:
   
-  * User registration/login with username and password. Click on Login/Signup on navigation bar.
+  * User registration/login with username and password.
+  * Click [here](https://yelp4ball.herokuapp.com/register) to sign up.
 
 
 * Authorization:
