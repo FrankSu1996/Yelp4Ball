@@ -63,6 +63,8 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
 * [momentJS](https://github.com/moment/moment)
 * [nodemailer](https://github.com/nodemailer/nodemailer)
 * [async](https://github.com/caolan/async)
+* [multer](https://github.com/expressjs/multer)
+* [cloudinary](https://cloudinary.com/)
 
 ### Platforms
 
