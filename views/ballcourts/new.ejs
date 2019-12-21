@@ -4,14 +4,14 @@
     <div class="row">
         <h1 style="text-align: center;">Add a New Ball Court</h1>
         <div style="width:40%; margin: 30px auto;">
-            <form action="/ballcourts" method="POST">
+            <form action="/ballcourts" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input class="form-control" type="text" placeholder="name goes here" name="name">
                 </div>
                 <div class="form-group">
-                    <label for="image">Image Url</label>
-                    <input class="form-control" type="text" placeholder="url goes here" name="image">
+                    <label for="image">Image</label>
+                    <input id="image" type="file" name="image" accept="*" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>

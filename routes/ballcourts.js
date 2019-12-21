@@ -3,6 +3,27 @@ var router = express.Router();
 var Ballcourt = require("../models/ballcourt");
 var middleware = require("../middleware/index");
 var NodeGeocoder = require("node-geocoder");
+var multer = require('multer');
+var storage = multer.diskStorage({
+  filename: function(req, file, callback) {
+    callback(null, Date.now() + file.originalname);
+  }
+});
+var imageFilter = function (req, file, cb) {
+    // accept image files only
+    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+        return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+};
+var upload = multer({ storage: storage, fileFilter: imageFilter})
+
+var cloudinary = require('cloudinary');
+cloudinary.config({ 
+  cloud_name: 'dq0tqtjzi', 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 var options = {
     provider: "google",
@@ -27,10 +48,9 @@ router.get("/", function(req, res) {
 });
 
 //CREATE route - add new ballcourt to DB
-router.post("/", middleware.loginRequired, function(req, res) {
+router.post("/", middleware.loginRequired, upload.single('image'), function(req, res) {
     //get data from form and add to ballcourts array
     var name = req.body.name;
-    var imgUrl = req.body.image;
     var numberPlaying = req.body.numberPlaying;
     var description = req.body.description;
     var author = {
@@ -39,24 +59,27 @@ router.post("/", middleware.loginRequired, function(req, res) {
     }
 
     geocoder.geocode(req.body.location, function(err, data) {
-        if(err || !data.length) {
-            req.flash("error", "Invalid address");
-            return res.redirect("back");
-        }
-        var lat = data[0].latitude;
-        var lng = data[0].longitude;
-        var location = data[0].formattedAddress;
-        var newCourt = {name: name, image: imgUrl, description: description, author: author, numberPlaying: numberPlaying,
-                        location: location, lat: lat, lng: lng};
-        //create new ballcourt and save to db
-        Ballcourt.create(newCourt, function(err, newlyCreated) {
-            if(err) {
-                console.log(err);
+        cloudinary.v2.uploader.upload(req.file.path, function(err, result) {
+            if(err || !data.length) {
+                req.flash("error", "Invalid address");
+                return res.redirect("back");
             }
-            else {
-                //redirect back to ballcourts page
-                res.redirect("ballcourts");
-            }
+            var imgUrl = result.secure_url;
+            var lat = data[0].latitude;
+            var lng = data[0].longitude;
+            var location = data[0].formattedAddress;
+            var newCourt = {name: name, image: imgUrl, description: description, author: author, numberPlaying: numberPlaying,
+                            location: location, lat: lat, lng: lng};
+            //create new ballcourt and save to db
+            Ballcourt.create(newCourt, function(err, newlyCreated) {
+                if(err) {
+                    console.log(err);
+                }
+                else {
+                    //redirect back to ballcourts page
+                    res.redirect("ballcourts");
+                }
+            });
         });
     });
 });
