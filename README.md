@@ -11,7 +11,7 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
 
 * Authentication:
   
-  * User registration/login with username and password
+  * User registration/login with username and password. Click on Login/Signup on navigation bar.
 
 
 * Authorization:
@@ -19,6 +19,11 @@ To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4
   * One cannot manage posts and view user profile without being authenticated
 
   * One cannot edit or delete posts and comments created by other users
+  
+* Password reset:
+  * User can request to reset password. When signed in, click on "Reset Password" on navigation bar.
+  
+  * User will receive email with reset link
 
 
 * Manage ball court posts with basic functionalities:
