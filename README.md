@@ -3,8 +3,9 @@ A NodeJS web application allowing users to share their favorite outdoor basketba
 This project was created as part of- [Udemy's Web Developer bootcamp course](https://www.udemy.com/course/the-web-developer-bootcamp/)
 
 ## Live Demo
+Please note: there are API keys protected as secrets, so cloning the project locally will not yield all the features of the application.
 
-To see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4ball.herokuapp.com/)
+Instead, to see the app in action, go to [https://yelp4ball.herokuapp.com/](https://yelp4ball.herokuapp.com/)
 
 ## Features
 * Follows RESTful routing protocol
