@@ -40,7 +40,7 @@ Instead, to see the app in action, go to [https://yelp4ball.herokuapp.com/](http
 
 * Flash messages responding to users' interaction with the app
 
-* Responsive web design
+* Responsive web design using bootstraps grid system
 
 ## Built with
 
